@@ -6,15 +6,25 @@ import { bindActionCreators } from 'redux'
 import { displayRaceData } from '../actions/index';
 
 class Dashboard extends React.Component{
+
     componentDidMount() {
-        this.props.displayRaceData()
+        this.props.displayRaceData(this.props.races)
+        console.log(this.props.races)
+    }
+
+    getRaceArray = () => {
+
     }
 
     render() {
-        console.log(this.props)
+        console.log(this.props.races)
         return(
             <div>
-                {}
+                {this.props.races.map((race, index) => (
+                    <div key={index}>
+                        <h1>{race.name}</h1>
+                    </div>
+                ))}
             </div>
         )
     }
