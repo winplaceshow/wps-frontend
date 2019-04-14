@@ -11,11 +11,31 @@ import {
 
 
 const initialstate = {
-    races: []
+    races: [],
+    loggingIn: false,
+    error: ''
 }
 
 const reducer = (state = initialstate, action) => {
     switch(action.type) {
+        case LOGIN_START:
+            return {
+                ...state,
+                loggingIn: true,
+                error: ''
+            }
+        case LOGIN_SUCCESS:
+            return {
+                ...state,
+                loggingIn: false,
+                error: ''
+            }
+        case LOGIN_FAILURE:
+            return {
+                ...state,
+                loggingIn: false,
+                error: action.payload
+            }
         case GET_RACE_DATA_START:
             return {
                 ...state,

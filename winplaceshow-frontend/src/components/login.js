@@ -2,6 +2,7 @@ import React from 'react';
 import { Connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
+// import Loader from 'react-loader-spinner';
 
 import { logIn } from '../actions/index';
 
@@ -56,7 +57,12 @@ class Login extends React.Component {
                         value={this.state.credentials.password}
                         onChange={this.changeHandler}
                     />
-                    <button onClick={this.login}>Login</button>
+                    <button onClick={this.login}>
+                        {/* {this.props.loggingIn ? (
+                            <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" /> 
+                        ) : () } */}
+                        Login
+                    </button>
                 </form>
             </div>
         )
@@ -71,7 +77,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = (state) => ({
-    races: state.races
+    loggingIn: state.loggingIn,
+    error: state.error
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
