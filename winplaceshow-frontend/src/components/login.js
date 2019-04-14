@@ -1,5 +1,4 @@
 import React from 'react';
-import { Connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 // import Loader from 'react-loader-spinner';

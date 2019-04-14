@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 
 import { displayRaceData } from '../actions/index';
@@ -9,7 +9,6 @@ class Dashboard extends React.Component{
 
     componentDidMount() {
         this.props.displayRaceData(this.props.races)
-        console.log(this.props.races)
     }
 
     getRaceArray = () => {
@@ -17,7 +16,6 @@ class Dashboard extends React.Component{
     }
 
     render() {
-        console.log(this.props.races)
         return(
             <div>
                 {this.props.races.map((race, index) => (

@@ -13,7 +13,8 @@ import {
 const initialstate = {
     races: [],
     loggingIn: false,
-    error: ''
+    error: '',
+    errorStatusCode: '',
 }
 
 const reducer = (state = initialstate, action) => {
@@ -31,10 +32,12 @@ const reducer = (state = initialstate, action) => {
                 error: ''
             }
         case LOGIN_FAILURE:
+            console.log(action.payload.status)
             return {
                 ...state,
                 loggingIn: false,
-                error: action.payload
+                error: action.payload.data.error,
+                errorStatusCode: action.payload.status
             }
         case GET_RACE_DATA_START:
             return {

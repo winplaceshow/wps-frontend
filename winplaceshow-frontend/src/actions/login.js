@@ -14,7 +14,7 @@ export const logIn = (credentials) => dispatch => {
             dispatch({type: LOGIN_SUCCESS, payload: res.data.payload})
         })
         .catch(err => {
-            console.log(err.response);
-            dispatch({ type: LOGIN_FAILURE, payload: 'The username or password is incorrect.'})
+            console.log(err.response.data);
+            dispatch({ type: LOGIN_FAILURE, payload: err.response})
         })
 }
