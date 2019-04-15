@@ -6,6 +6,7 @@ import './App.css';
 import Dashboard from './components/dashboard';
 import Race from './components/race';
 import Login from './components/login';
+import SearchRace from './components/searchRace';
 import PrivateRoute from './components/PrivateRoute';
 // import BarChart from './dataVisuals/barchart';
 
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path="/" component={Login}/>
           <PrivateRoute exact path="/protected/" component={Dashboard}/>
           <PrivateRoute path="/protected/:id" component={Race}/>
+          <SearchRace/>
           {/* <BarChart/> */}
         </div>
       </Router>
