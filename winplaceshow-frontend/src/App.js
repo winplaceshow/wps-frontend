@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
 import Dashboard from './components/dashboard';
+import Race from './components/race';
 import Login from './components/login';
 import PrivateRoute from './components/PrivateRoute';
 // import BarChart from './dataVisuals/barchart';
@@ -14,7 +15,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route exact path="/" component={Login}/>
-          <PrivateRoute path="/protected" component={Dashboard}/>
+          <PrivateRoute exact path="/protected/" component={Dashboard}/>
+          <PrivateRoute path="/protected/:id" component={Race}/>
           {/* <BarChart/> */}
         </div>
       </Router>
