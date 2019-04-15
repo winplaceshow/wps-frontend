@@ -7,9 +7,9 @@ import { displayRaceData } from '../actions/index';
 
 class Dashboard extends React.Component{
 
-    componentDidMount() {
-        this.props.displayRaceData(this.props.races)
-    }
+    // componentDidMount() {
+    //     this.props.displayRaceData(this.props.races)
+    // }
 
     getRaceArray = () => {
 

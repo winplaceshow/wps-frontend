@@ -15,6 +15,8 @@ const initialstate = {
     loggingIn: false,
     error: '',
     errorStatusCode: '',
+    date: '',
+    city: ''
 }
 
 const reducer = (state = initialstate, action) => {
@@ -39,6 +41,9 @@ const reducer = (state = initialstate, action) => {
                 error: action.payload.data.error,
                 errorStatusCode: action.payload.status
             }
+        // case SIGNUP_START:
+        // case SIGNUP_SUCCESS:
+        // case SIGNUP_FAILURE:
         case GET_RACE_DATA_START:
             return {
                 ...state,
