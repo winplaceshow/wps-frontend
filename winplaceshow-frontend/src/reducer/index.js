@@ -25,6 +25,7 @@ const initialstate = {
     races: [],
     loggingIn: false,
     error: '',
+    signupSuccessMessage: ''
 }
 
 const reducer = (state = initialstate, action) => {
@@ -54,19 +55,21 @@ const reducer = (state = initialstate, action) => {
                 ...state,
                 signingup: true,
                 error: '',
+                signupSuccessMessage: ''
             }
         case SIGNUP_SUCCESS:
             return {
                 ...state,
                 signingup: false,
-                signupSuccessMessage: action.payload.status,
+                signupSuccessMessage: "Success!!! Now you can go to log-in.",
                 error: '',
             }
         case SIGNUP_FAILURE:
             return {
                 ...state,
                 signingup: false,
-                errorStatusCode: action.payload.status
+                errorStatusCode: action.payload.status,
+                signupSuccessMessage: ''
             }
         // case RACE_SEARCH_SUCCESS:
         //     return {

@@ -13,7 +13,7 @@ export const signup = (credentials) => dispatch => {
             console.log(res)
         })
         .catch(err => {
+            dispatch({ type: SIGNUP_FAILURE})
             console.log(err);
-            // dispatch({ type: SIGNUP_FAILURE, payload: err.response})
         })
 }

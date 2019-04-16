@@ -78,10 +78,10 @@ class Signup extends React.Component {
     signup = (e) => {
         e.preventDefault()
         this.props.signup(this.state.credentials)
-        .then(() => {
-            console.log(this.props.history)
-            this.props.history.push('/signedup');
-        })
+        // .then(() => {
+        //     console.log(this.props.history)
+        //     this.props.history.push('/signedup');
+        // })
         this.setState({
             credentials: {
                 email: '',
@@ -131,6 +131,7 @@ class Signup extends React.Component {
                         ) : () } */}
                         Signup
                     </SignupButton>
+                    <h2>{this.props.signupSuccessMessage}</h2>
                 </SignupForm>
             </SignupContainer>
         )
@@ -146,7 +147,8 @@ function mapDispatchToProps(dispatch) {
 
 const mapStateToProps = (state) => ({
     signingup: state.signingup,
-    error: state.error
+    error: state.error,
+    signupSuccessMessage: state.signupSuccessMessage
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);
