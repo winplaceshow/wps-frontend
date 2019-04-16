@@ -1,3 +1,9 @@
+import { 
+    SIGNUP_START,
+    SIGNUP_SUCCESS,
+    SIGNUP_FAILURE,
+} from '../actions/index';
+
 import { LOGIN_START,
     LOGIN_SUCCESS,
     LOGIN_FAILURE 
@@ -43,9 +49,25 @@ const reducer = (state = initialstate, action) => {
                 error: action.payload.data.error,
                 errorStatusCode: action.payload.status
             }
-        // case SIGNUP_START:
-        // case SIGNUP_SUCCESS:
-        // case SIGNUP_FAILURE:
+        case SIGNUP_START:
+            return {
+                ...state,
+                signingup: true,
+                error: '',
+            }
+        case SIGNUP_SUCCESS:
+            return {
+                ...state,
+                signingup: false,
+                signupSuccessMessage: action.payload.status,
+                error: '',
+            }
+        case SIGNUP_FAILURE:
+            return {
+                ...state,
+                signingup: false,
+                errorStatusCode: action.payload.status
+            }
         // case RACE_SEARCH_SUCCESS:
         //     return {
         //         ...state,

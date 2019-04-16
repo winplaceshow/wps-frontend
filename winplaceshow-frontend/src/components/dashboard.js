@@ -1,4 +1,4 @@
-import styled, { css, createGlobalStyle  } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import React from 'react';
 import { connect } from 'react-redux';
@@ -29,7 +29,15 @@ const ContainerDiv = styled.div`
 const SideBar = styled.div`
     background-color: gray;
     width: 200px;
-    height: 100vh;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 25px;
+`
+
+const MainContentDiv = styled.div`
+    width: 100%;
 `
 
 const raceObj = {
@@ -59,27 +67,28 @@ class Dashboard extends React.Component{
         return(
             <div>
                 <NavBarDiv>
-                    <div>WPS</div>
+                    <h2>WPS</h2>
                     <nav>
                         <LogOutP>Log Out</LogOutP>
                     </nav>
                 </NavBarDiv>
                 <ContainerDiv>
                     <SideBar>
-                        <p>Side Bar</p>
-                        <p>Past Races</p>
+                        <h3>Side Bar</h3>
                         <p>Predictions</p>
+                        <p>Past Races</p>
                         <p>Horses</p>
                         <p>Jockeys</p>
+                        <p>Race Tracks</p>
                     </SideBar>
-                    <div>
+                    <MainContentDiv>
                         <SearchRace/>
                         {this.props.races.map((race, index) => (
                             <div key={index}>
                                 <h1>{race.name}</h1>
                             </div>
                         ))}
-                    </div>
+                    </MainContentDiv>
                 </ContainerDiv>
             </div>
         )
