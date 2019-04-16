@@ -18,7 +18,6 @@ class App extends Component {
           <Route exact path="/" component={Login}/>
           <PrivateRoute exact path="/protected/" component={Dashboard}/>
           <PrivateRoute path="/protected/:id" component={Race}/>
-          <SearchRace/>
           {/* <BarChart/> */}
         </div>
       </Router>

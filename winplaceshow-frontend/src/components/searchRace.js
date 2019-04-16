@@ -52,7 +52,7 @@ class SearchRace extends React.Component {
                         value={this.state.city}
                         onChange={this.changeHandler}
                     />
-                    <button onClick={this.search}>Login</button>
+                    <button onClick={this.search}>Search</button>
                 </form>
             </div>
         )

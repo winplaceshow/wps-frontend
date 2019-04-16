@@ -9,14 +9,16 @@ import {
     GET_RACE_DATA_FAILURE 
 } from '../actions/index';
 
+import { 
+    RACE_SEARCH_START,
+    RACE_SEARCH_SUCCESS,
+    RACE_SEARCH_FAILURE
+} from '../actions/index';
 
 const initialstate = {
     races: [],
     loggingIn: false,
     error: '',
-    errorStatusCode: '',
-    date: '',
-    city: ''
 }
 
 const reducer = (state = initialstate, action) => {
@@ -44,6 +46,11 @@ const reducer = (state = initialstate, action) => {
         // case SIGNUP_START:
         // case SIGNUP_SUCCESS:
         // case SIGNUP_FAILURE:
+        // case RACE_SEARCH_SUCCESS:
+        //     return {
+        //         ...state,
+        //         races: action.payload
+        //     }
         case GET_RACE_DATA_START:
             return {
                 ...state,
