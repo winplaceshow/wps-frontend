@@ -2,6 +2,7 @@ import {
     SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_FAILURE,
     LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE,
     GET_RACE_DATA_START, GET_RACE_DATA_SUCCESS, GET_RACE_DATA_FAILURE,
+    GET_PAST_RACE_DATA_SUCCESS,
 } from '../actions/index';
 
 // import {  
@@ -18,6 +19,7 @@ import {
 
 const initialstate = {
     futureRaceArray: [],
+    pastRaceArray: [],
     loggingIn: false,
     error: '',
     signupSuccessMessage: ''
@@ -84,6 +86,11 @@ const reducer = (state = initialstate, action) => {
         case GET_RACE_DATA_FAILURE:
             return {
                 
+            }
+        case GET_PAST_RACE_DATA_SUCCESS:
+            return {
+                ...state,
+                pastRaceArray: action.payload
             }
         default:
             return state

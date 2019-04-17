@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // import Loader from 'react-loader-spinner';
 import styled, { css } from 'styled-components';
 
-import { displayRaceData } from '../actions/index';
+import { futureRaceData } from '../actions/index';
 
 const SearchContainerDiv = styled.div`
     box-sizing: border-box;
@@ -22,10 +22,23 @@ const SearchForm = styled.form`
     width: 450px;
 `
 
-class SearchRace extends React.Component {
+const RaceDiv = styled.div`
+    display: flex;
+    width: 85%;
+    background-color: red;
+    margin: 30px auto;
+    align-items: center;
+    justify-content: space-around;
+`
+
+class FutureRace extends React.Component {
     state = {
         date: '',
         city: ''
+    }
+
+    componentDidMount() {
+        this.props.futureRaceData()
     }
 
     changeHandler = (e) => {
@@ -38,7 +51,7 @@ class SearchRace extends React.Component {
 
     search = (e) => {
         e.preventDefault()
-        this.props.displayRaceData(this.props.races, this.state.date, this.state.city)
+        this.props.futureRaceData(this.props.races, this.state.date, this.state.city)
         this.setState({
             credentials: {
                 date: '',
@@ -50,26 +63,37 @@ class SearchRace extends React.Component {
     render() {
         console.log(this.props)
         return(
-            <SearchContainerDiv>
-                <h3>Dashboard</h3>
-                <SearchForm>
-                    <input
-                        type="text"
-                        name="date"
-                        placeholder="date"
-                        value={this.state.date}
-                        onChange={this.changeHandler}
-                    />
-                    <input
-                        type="text"
-                        name="city"
-                        placeholder="city"
-                        value={this.state.city}
-                        onChange={this.changeHandler}
-                    />
-                    <button onClick={this.search}>Search</button>
-                </SearchForm>
-            </SearchContainerDiv>
+            // <SearchContainerDiv>
+            //     <h3>Dashboard</h3>
+            //     <SearchForm>
+            //         <input
+            //             type="text"
+            //             name="date"
+            //             placeholder="date"
+            //             value={this.state.date}
+            //             onChange={this.changeHandler}
+            //         />
+            //         <input
+            //             type="text"
+            //             name="city"
+            //             placeholder="city"
+            //             value={this.state.city}
+            //             onChange={this.changeHandler}
+            //         />
+            //         <button onClick={this.search}>Search</button>
+            //     </SearchForm>
+            // </SearchContainerDiv>
+            <div>
+                {this.props.futureRaceArray.map((race, index) => (
+                    <RaceDiv key={index}>
+                        <p>{index+1}</p>
+                        <h2>{race.name}</h2>
+                        <h2>{race.year}</h2>
+                        <h2>{race.city}</h2>
+                        <h2>prediction</h2>
+                    </RaceDiv>
+                ))}
+            </div>
         )
     }
 }
@@ -77,7 +101,7 @@ class SearchRace extends React.Component {
 function mapDispatchToProps(dispatch) {
     return {
       dispatch,
-      ...bindActionCreators({ displayRaceData }, dispatch)
+      ...bindActionCreators({ futureRaceData }, dispatch)
     }
 }
 
@@ -85,4 +109,4 @@ const mapStateToProps = (state) => ({
     futureRaceArray: state.futureRaceArray,
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchRace);
+export default connect(mapStateToProps, mapDispatchToProps)(FutureRace);

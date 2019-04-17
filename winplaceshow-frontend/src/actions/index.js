@@ -12,5 +12,10 @@ export { LOGIN_START,
 export { GET_RACE_DATA_START,
     GET_RACE_DATA_SUCCESS,
     GET_RACE_DATA_FAILURE,
-    displayRaceData,
-} from './raceData';
+    futureRaceData,
+} from './futureRaces';
+
+export { 
+    GET_PAST_RACE_DATA_SUCCESS, 
+    pastRaceData 
+} from './pastRaces';

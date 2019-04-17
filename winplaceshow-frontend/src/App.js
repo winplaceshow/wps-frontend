@@ -10,6 +10,7 @@ import Signup from './components/loginSignup/SignUp';
 import SearchRace from './components/searchRace';
 import PrivateRoute from './components/PrivateRoute';
 import SignupSuccess from './components/loginSignup/signupSuccess';
+import PastRaces from './components/pastRaces/pastRaces';
 // import BarChart from './dataVisuals/barchart';
 
 class App extends Component {
@@ -20,8 +21,8 @@ class App extends Component {
           <Route exact path="/" component={Login}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/signedup" component={SignupSuccess}/>
-          <PrivateRoute exact path="/protected/" component={Dashboard}/>
-          <PrivateRoute path="/protected/:id" component={Race}/>
+          <PrivateRoute path="/protected/" component={Dashboard}/>
+          {/* <PrivateRoute path="/protected/:id" component={Race}/> */}
           {/* <BarChart/> */}
         </div>
       </Router>
