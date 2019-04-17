@@ -40,18 +40,14 @@ const MainContentDiv = styled.div`
     width: 100%;
 `
 
-const raceObj = {
-    date: "16/04/2019",
-    track: "track value",
-    location: "location value",
-    horses: 7,
-    listOfHorses: {
-        horse1: "horse 1",
-        horse2: 'horse 2',
-        horse3: 'horse 3',
-        horse4: 'horse 4'
-    }
-}
+const RaceDive = styled.div`
+    display: flex;
+    width: 85%;
+    background-color: red;
+    margin: 30px auto;
+    align-items: center;
+    justify-content: space-around;
+`
 
 class Dashboard extends React.Component{
 
@@ -83,10 +79,14 @@ class Dashboard extends React.Component{
                     </SideBar>
                     <MainContentDiv>
                         <SearchRace/>
-                        {this.props.races.map((race, index) => (
-                            <div key={index}>
-                                <h1>{race.name}</h1>
-                            </div>
+                        {this.props.futureRaceArray.map((race, index) => (
+                            <RaceDive key={index}>
+                                <p>{index+1}</p>
+                                <h2>{race.name}</h2>
+                                <h2>{race.year}</h2>
+                                <h2>{race.city}</h2>
+                                <h2>prediction</h2>
+                            </RaceDive>
                         ))}
                     </MainContentDiv>
                 </ContainerDiv>
@@ -103,7 +103,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = (state) => ({
-    races: state.races
+    futureRaceArray: state.futureRaceArray
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

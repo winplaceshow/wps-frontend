@@ -82,7 +82,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = (state) => ({
-    races: state.races,
+    futureRaceArray: state.futureRaceArray,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchRace);
