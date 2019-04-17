@@ -21,7 +21,7 @@ class App extends Component {
           <Route exact path="/" component={Login}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/signedup" component={SignupSuccess}/>
-          <PrivateRoute path="/protected/" component={Dashboard}/>
+          <Route path="/protected/" component={Dashboard}/>
           {/* <PrivateRoute path="/protected/:id" component={Race}/> */}
           {/* <BarChart/> */}
         </div>

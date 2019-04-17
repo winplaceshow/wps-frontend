@@ -2,7 +2,7 @@ export const pastRaceArray = [
     {
         id: 0,
         year: 2010,
-        name: "triple crown",
+        name: "double crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
@@ -16,7 +16,7 @@ export const pastRaceArray = [
     {
         id: 2,
         year: 2010,
-        name: "triple crown",
+        name: "tictacto crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
@@ -107,7 +107,7 @@ export const futureRaceArray = [
     {
         id: 1,
         year: 2019,
-        name: "triple crown",
+        name: "double crown",
         city: "elmont",
         prediction: [
             {
@@ -139,7 +139,7 @@ export const futureRaceArray = [
     {
         id: 2,
         year: 2019,
-        name: "triple crown",
+        name: "Abrakadabra",
         city: "elmont",
         prediction: [
             {
@@ -171,7 +171,7 @@ export const futureRaceArray = [
     {
         id: 3,
         year: 2019,
-        name: "triple crown",
+        name: "Premier League",
         city: "elmont",
         prediction: [
             {

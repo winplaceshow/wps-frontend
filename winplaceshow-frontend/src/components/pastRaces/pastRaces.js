@@ -32,15 +32,41 @@ const RaceDiv = styled.div`
 
 class PastRaces extends React.Component {
 
+    state = {
+        name: '',
+        city: '',
+    }
+
     componentDidMount() {
         this.props.pastRaceData()
     }
 
+    changeHandler = (e) => {
+        e.preventDefault()
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
     render() {
-        console.log(this.props)
+        let filteredRaces = this.props.pastRaceArray.filter(race => {
+            return race.name.indexOf(this.state.name) != -1;
+        })
         return(
             <div>
-                {this.props.pastRaceArray.map((race, index) => (
+                <SearchContainerDiv>
+                    <h3>Dashboard</h3>
+                    <SearchForm>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="name"
+                            value={this.state.name}
+                            onChange={this.changeHandler}
+                        />
+                    </SearchForm>
+                </SearchContainerDiv>
+                {filteredRaces.map((race, index) => (
                     <RaceDiv key={index}>
                         <p>{index+1}</p>
                         <h2>{race.name}</h2>

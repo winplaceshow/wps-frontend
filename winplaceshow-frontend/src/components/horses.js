@@ -32,20 +32,43 @@ const RaceDiv = styled.div`
 
 class HorseData extends React.Component {
 
+    state = {
+        name: '',
+    }
+
     componentDidMount() {
         this.props.horsesData()
     }
 
+    changeHandler = (e) => {
+        e.preventDefault()
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
     render() {
-        console.log(this.props.horses)
+        let filteredHorses = this.props.horses.filter(race => {
+            return race.name.indexOf(this.state.name) != -1;
+        })        
         return(
             <div>
-                {this.props.horses.map((race, index) => (
+                <SearchContainerDiv>
+                    <h3>Dashboard</h3>
+                    <SearchForm>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="name"
+                            value={this.state.name}
+                            onChange={this.changeHandler}
+                        />
+                    </SearchForm>
+                </SearchContainerDiv>
+                {filteredHorses.map((race, index) => (
                     <RaceDiv key={index}>
                         <p>{index+1}</p>
                         <h2>{race.name}</h2>
-                        {/* <h2>{race.year}</h2> */}
-                        {/* <h2>{race.city}</h2> */}
                     </RaceDiv>
                 ))}
             </div>

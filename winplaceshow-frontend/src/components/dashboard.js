@@ -44,17 +44,6 @@ const MainContentDiv = styled.div`
     width: 100%;
 `
 
-const SearchContainerDiv = styled.div`
-    box-sizing: border-box;
-    height: 50px;
-    width: 100%;
-    background-color: green;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-`
-
 class Dashboard extends React.Component{
 
     // componentDidMount() {
@@ -65,13 +54,17 @@ class Dashboard extends React.Component{
 
     }
 
+    logout = () => {
+        localStorage.clear();
+    }
+
     render() {
         return(
             <div>
                 <NavBarDiv>
                     <h2>WPS</h2>
                     <nav>
-                        <LogOutP>Log Out</LogOutP>
+                        <LogOutP onClick={this.logout}>Log Out</LogOutP>
                     </nav>
                 </NavBarDiv>
                 <ContainerDiv>
@@ -84,9 +77,6 @@ class Dashboard extends React.Component{
                         <p>Race Tracks</p>
                     </SideBar>
                     <MainContentDiv>
-                        <SearchContainerDiv>
-                            <h3>Dashboard</h3>
-                        </SearchContainerDiv>
                         <Route path="/protected/futureraces" component={FutureRace}/>
                         <Route path="/protected/pastraces" component={PastRaces}/>
                         <Route path="/protected/horses" component={HorseData}/>
