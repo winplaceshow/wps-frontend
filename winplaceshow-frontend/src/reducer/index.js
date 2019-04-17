@@ -88,6 +88,7 @@ const reducer = (state = initialstate, action) => {
                 
             }
         case GET_PAST_RACE_DATA_SUCCESS:
+        console.log(action)
             return {
                 ...state,
                 pastRaceArray: action.payload

@@ -21,6 +21,15 @@ const SearchForm = styled.form`
     width: 450px;
 `
 
+const RaceDiv = styled.div`
+    display: flex;
+    width: 85%;
+    background-color: red;
+    margin: 30px auto;
+    align-items: center;
+    justify-content: space-around;
+`
+
 class PastRaces extends React.Component {
 
     componentDidMount() {
@@ -31,7 +40,15 @@ class PastRaces extends React.Component {
         console.log(this.props)
         return(
             <div>
-                <h1>Past Races</h1>
+                {this.props.pastRaceArray.map((race, index) => (
+                    <RaceDiv key={index}>
+                        <p>{index+1}</p>
+                        <h2>{race.name}</h2>
+                        <h2>{race.year}</h2>
+                        <h2>{race.city}</h2>
+                        <h2>prediction</h2>
+                    </RaceDiv>
+                ))}
             </div>
         )
     }
@@ -45,7 +62,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = (state) => ({
-    races: state.races,
+    pastRaceArray: state.pastRaceArray,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PastRaces);

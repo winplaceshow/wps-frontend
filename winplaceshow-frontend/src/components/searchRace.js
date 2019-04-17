@@ -6,16 +6,7 @@ import styled, { css } from 'styled-components';
 
 import { futureRaceData } from '../actions/index';
 
-const SearchContainerDiv = styled.div`
-    box-sizing: border-box;
-    height: 50px;
-    width: 100%;
-    background-color: green;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-`
+
 
 const SearchForm = styled.form`
     /* display: flex; */
@@ -32,32 +23,9 @@ const RaceDiv = styled.div`
 `
 
 class FutureRace extends React.Component {
-    state = {
-        date: '',
-        city: ''
-    }
 
     componentDidMount() {
         this.props.futureRaceData()
-    }
-
-    changeHandler = (e) => {
-        e.preventDefault()
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-        console.log(this.state)
-    }
-
-    search = (e) => {
-        e.preventDefault()
-        this.props.futureRaceData(this.props.races, this.state.date, this.state.city)
-        this.setState({
-            credentials: {
-                date: '',
-                city: ''
-            }
-        })
     }
 
     render() {

@@ -43,6 +43,17 @@ const MainContentDiv = styled.div`
     width: 100%;
 `
 
+const SearchContainerDiv = styled.div`
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+`
+
 class Dashboard extends React.Component{
 
     // componentDidMount() {
@@ -67,11 +78,14 @@ class Dashboard extends React.Component{
                         <h3>Side Bar</h3>
                         <Link to="/protected/futureraces"><p>Predictions</p></Link>
                         <Link to="/protected/pastraces"><p>Past Races</p></Link>
-                        <p>Horses</p>
+                        <Link to="/protected/horses"><p>Horses</p></Link>
                         <p>Jockeys</p>
                         <p>Race Tracks</p>
                     </SideBar>
                     <MainContentDiv>
+                        <SearchContainerDiv>
+                            <h3>Dashboard</h3>
+                        </SearchContainerDiv>
                         <Route path="/protected/futureraces" component={FutureRace}/>
                         <Route path="/protected/pastraces" component={PastRaces}/>
 
