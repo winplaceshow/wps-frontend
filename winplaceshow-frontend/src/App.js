@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
 import Dashboard from './components/dashboard';
-import Race from './components/race';
-import Login from './components/login';
+import Race from './components/futureRace/race';
+import Login from './components/loginSignup/login';
 import Signup from './components/loginSignup/SignUp';
 import SearchRace from './components/searchRace';
 import PrivateRoute from './components/PrivateRoute';
@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/login" component={Login}/>
+          <Route exact path="/" component={Login}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/signedup" component={SignupSuccess}/>
           <PrivateRoute exact path="/protected/" component={Dashboard}/>

@@ -7,7 +7,7 @@ export const GET_RACE_DATA_FAILURE = 'GET_RACE_DATA_FAILURE';
 export const displayRaceData = (races, date, city) => dispatch => {
     dispatch({ type: GET_RACE_DATA_START, payload: races});
     axiosWithAuth()
-        .get(`https://build-week-wps.herokuapp.com/races`)
+        .get(`http://winplaceshow.herokuapp.com/json/previous/triplecrown/`)
         .then(res => {
             console.log(res)
             // const arr = []
@@ -20,6 +20,6 @@ export const displayRaceData = (races, date, city) => dispatch => {
             // console.log(arr)
             dispatch({type: GET_RACE_DATA_SUCCESS, payload: res.data})
         })
-        .catch(err => console.log(err.response))
+        .catch(err => console.log(err))
 }
 
