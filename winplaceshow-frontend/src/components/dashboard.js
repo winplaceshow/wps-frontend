@@ -8,6 +8,7 @@ import { bindActionCreators } from 'redux'
 import { futureRaceData } from '../actions/index';
 import FutureRace from './searchRace';
 import PastRaces from './pastRaces/pastRaces';
+import HorseData from './horses';
 import { Link } from 'react-router-dom';
 
 const NavBarDiv = styled.div`
@@ -88,7 +89,7 @@ class Dashboard extends React.Component{
                         </SearchContainerDiv>
                         <Route path="/protected/futureraces" component={FutureRace}/>
                         <Route path="/protected/pastraces" component={PastRaces}/>
-
+                        <Route path="/protected/horses" component={HorseData}/>
                     </MainContentDiv>
                 </ContainerDiv>
             </div>

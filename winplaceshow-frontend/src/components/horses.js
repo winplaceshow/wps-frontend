@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import styled, { css } from 'styled-components';
 
-import { pastRaceData } from '../../actions/index';
+import { horsesData } from '../actions/index';
 
 const SearchContainerDiv = styled.div`
     box-sizing: border-box;
@@ -30,22 +30,22 @@ const RaceDiv = styled.div`
     justify-content: space-around;
 `
 
-class PastRaces extends React.Component {
+class HorseData extends React.Component {
 
     componentDidMount() {
-        this.props.pastRaceData()
+        this.props.horsesData()
     }
 
     render() {
-        console.log(this.props)
+        console.log(this.props.horses)
         return(
             <div>
-                {this.props.pastRaceArray.map((race, index) => (
+                {this.props.horses.map((race, index) => (
                     <RaceDiv key={index}>
                         <p>{index+1}</p>
                         <h2>{race.name}</h2>
-                        <h2>{race.year}</h2>
-                        <h2>{race.city}</h2>
+                        {/* <h2>{race.year}</h2> */}
+                        {/* <h2>{race.city}</h2> */}
                     </RaceDiv>
                 ))}
             </div>
@@ -56,12 +56,12 @@ class PastRaces extends React.Component {
 function mapDispatchToProps(dispatch) {
     return {
       dispatch,
-      ...bindActionCreators({ pastRaceData }, dispatch)
+      ...bindActionCreators({ horsesData }, dispatch)
     }
 }
 
 const mapStateToProps = (state) => ({
-    pastRaceArray: state.pastRaceArray,
+    horses: state.horses,
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(PastRaces);
+export default connect(mapStateToProps, mapDispatchToProps)(HorseData);
