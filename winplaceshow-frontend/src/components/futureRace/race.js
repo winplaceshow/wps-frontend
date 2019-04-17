@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 
-import { displayRaceData } from '../actions/index';
+import { displayRaceData } from '../../actions/index';
+import { futureRaceArray } from '../../objects';
 
 const Race = (props) => {
-    console.log(props.match)
+    console.log(futureRaceArray)
     const id = props.match.params.id
     const race = props.races.find(race => `${race.id}` === id)
     return (

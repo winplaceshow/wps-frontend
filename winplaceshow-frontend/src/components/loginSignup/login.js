@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { logIn } from '../actions/index';
+import { logIn } from '../../actions/index';
 
 const LoginContainer = styled.div`
     background-color: red;

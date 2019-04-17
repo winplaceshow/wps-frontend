@@ -1,19 +1,14 @@
 import { 
-    SIGNUP_START,
-    SIGNUP_SUCCESS,
-    SIGNUP_FAILURE,
+    SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_FAILURE,
+    LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE,
+    GET_RACE_DATA_START, GET_RACE_DATA_SUCCESS, GET_RACE_DATA_FAILURE,
 } from '../actions/index';
 
-import { LOGIN_START,
-    LOGIN_SUCCESS,
-    LOGIN_FAILURE 
-} from '../actions/index';
+// import {  
+// } from '../actions/index';
 
-import { 
-    GET_RACE_DATA_START, 
-    GET_RACE_DATA_SUCCESS, 
-    GET_RACE_DATA_FAILURE 
-} from '../actions/index';
+// import { 
+// } from '../actions/index';
 
 import { 
     RACE_SEARCH_START,
@@ -22,7 +17,7 @@ import {
 } from '../actions/index';
 
 const initialstate = {
-    races: [],
+    futureRaceArray: [],
     loggingIn: false,
     error: '',
     signupSuccessMessage: ''
@@ -84,7 +79,7 @@ const reducer = (state = initialstate, action) => {
         case GET_RACE_DATA_SUCCESS:
             return {
                 ...state,
-                races: action.payload
+                futureRaceArray: action.payload
             }
         case GET_RACE_DATA_FAILURE:
             return {

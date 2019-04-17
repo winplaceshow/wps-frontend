@@ -11,14 +11,13 @@ const SignupContainer = styled.div`
     background-color: red;
     width: 30%;
     height: auto;
-    margin: 8% auto;
+    margin: 8% auto 0 auto;
 `
 
 const HeaderDiv = styled.div`
     height: 50px;
     display: flex;
-    /* overflow: hidden; */
-    /* justify-content: space-around; */
+    overflow: hidden;
     align-items: center;
 `
 
@@ -96,7 +95,7 @@ class Signup extends React.Component {
         return(
             <SignupContainer>
                 <HeaderDiv>
-                    <Link to="/login">
+                    <Link to="/">
                         <LoginDiv>LogIn</LoginDiv>
                     </Link>
                     <Link to="/signup">
