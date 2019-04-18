@@ -12,6 +12,7 @@ import PastRaces from './pastRaces/pastRaces';
 import HorseData from './horses';
 import { Link } from 'react-router-dom';
 import SingleHorse from './singleHorse';
+import UpdateUser from './updateUser';
 
 const NavBarDiv = styled.div`
     background-color: red;
@@ -87,7 +88,7 @@ class Dashboard extends React.Component{
                     <NavItemDiv>
                         <NavItemP onClick={this.logout}>Log Out</NavItemP>
                         <NavItemP onClick={this.delete}>Delete Account</NavItemP>
-                        <NavItemP>Update Account</NavItemP>
+                        <Link to="/protected/updateuser"><NavItemP>Update Account</NavItemP></Link>
                     </NavItemDiv>
                 </NavBarDiv>
                 <ContainerDiv>
@@ -104,6 +105,7 @@ class Dashboard extends React.Component{
                         <Route path="/protected/pastraces" component={PastRaces}/>
                         <Route exact path="/protected/horses" component={HorseData}/>
                         <Route path="/protected/horses/:id" component={SingleHorse}/>
+                        <Route path="/protected/updateuser" component={UpdateUser}/>
                     </MainContentDiv>
                 </ContainerDiv>
             </div>
