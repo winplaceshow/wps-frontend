@@ -11,10 +11,12 @@ const HeaderContainerDiv = styled.div`
 `
 
 const HorsePictureDiv = styled.div`
-    width: 600px;
+    width: 320px;
     height: 320px;
-    margin-left: 50px;
-    margin-top: 40px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    /* margin-left: 50px;
+    margin-top: 40px; */
 `
 
 const HorsePictureImg = styled.img`
@@ -26,16 +28,37 @@ const HorsePictureImg = styled.img`
 const LineChartDiv = styled.div`
     width: 400px;
     height: 320px;
-    margin-left: 60px;
+    margin-left: 30px;
     /* height: 400px; */
 `
 
 const BottomContentDiv = styled.div`
     display: flex;
     width: 90%;
-    margin: 50px auto;
-    background-color: red;
+    background-color: white;
+    color: #4D7EA8;
+    margin: 30px auto;
+    align-items: center;
     justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+    /* padding-bottom: 15px; */
+    margin-top: 70px;
+`
+
+const PictureTextContainerDiv = styled.div`
+    width: 700px;
+    height: 320px;
+    background-color: white;
+    margin-left: 50px;
+    margin-top: 40px;
+    border-radius: 160px;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+    padding-right: 20px;
+    color: #4D7EA8;
 `
 
 function SingleHorse(props) {
@@ -44,9 +67,12 @@ function SingleHorse(props) {
     return (
         <div>
             <HeaderContainerDiv>
-                <HorsePictureDiv>
-                    <HorsePictureImg src={`${horse.picture}`}/>
-                </HorsePictureDiv>
+                <PictureTextContainerDiv>
+                    <HorsePictureDiv>
+                        <HorsePictureImg src={`${horse.picture}`}/>
+                    </HorsePictureDiv>
+                    <h4>This is the best horse in this whole universe. You are not going to find anything faster than this horse. This is the best horse in this whole universe. You are not going to find anything faster than this horse. </h4>
+                </PictureTextContainerDiv>
                 <LineChartDiv>
                     <LineChart/>
                 </LineChartDiv>
