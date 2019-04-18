@@ -24,8 +24,12 @@ const NavBarDiv = styled.div`
 `
 
 const NavItemP = styled.p`
-    margin-left: 25px;
+    padding: 15px;
     cursor: pointer;
+    &:hover{
+        background-color: white;
+        color: black;
+    }
 `
 
 const ContainerDiv = styled.div`
@@ -46,12 +50,20 @@ const SideBar = styled.div`
     font-weight: bold;
 `
 
-const SideBarP = styled.p`
+const SideBarDiv = styled.div`
     text-decoration: none;
     color: white;
+`
+
+const SideBarOuterDiv = styled.div`
     width: 100%;
+    height: 50px;
+    text-align: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+    padding-top: 13px;
     &&:hover{
-        background-color: black
+        background-color: #4D7EA8;
     }
 `
 
@@ -61,6 +73,11 @@ const MainContentDiv = styled.div`
 
 const NavItemDiv = styled.div`
     display: flex;
+    font-weight: bold;
+`
+const SideBarH3 = styled.h3`
+    margin-top: 30px;
+    padding-left: 20px;
 `
 
 class Dashboard extends React.Component{
@@ -100,10 +117,22 @@ class Dashboard extends React.Component{
                 </NavBarDiv>
                 <ContainerDiv>
                     <SideBar>
-                        <h3>SIDE BAR</h3>
-                        <Link to="/protected/" style={{textDecoration: 'none'}}><SideBarP>Predictions</SideBarP></Link>
-                        <Link to="/protected/pastraces" style={{textDecoration: 'none'}}><SideBarP>Past Races</SideBarP></Link>
-                        <Link to="/protected/horses" style={{textDecoration: 'none'}}><SideBarP>Horses</SideBarP></Link>
+                        <SideBarH3>SIDE BAR</SideBarH3>
+                        <SideBarOuterDiv>
+                            <Link to="/protected/" style={{textDecoration: 'none'}}>
+                                <SideBarDiv>Predictions</SideBarDiv>
+                            </Link>
+                        </SideBarOuterDiv>
+                        <SideBarOuterDiv>
+                            <Link to="/protected/pastraces" style={{textDecoration: 'none'}}>
+                                <SideBarDiv>Past Races</SideBarDiv>
+                            </Link>
+                        </SideBarOuterDiv>
+                        <SideBarOuterDiv>
+                            <Link to="/protected/horses" style={{textDecoration: 'none'}}>
+                                <SideBarDiv>Horses</SideBarDiv>
+                            </Link>
+                        </SideBarOuterDiv>
                     </SideBar>
                     <MainContentDiv>
                         <Route exact path="/protected/" component={FutureRace}/>
