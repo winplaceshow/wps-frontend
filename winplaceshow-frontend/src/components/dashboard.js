@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import React from 'react';
 import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 import { futureRaceData } from '../actions/index';
 import FutureRace from './searchRace';
@@ -53,10 +52,6 @@ const NavItemDiv = styled.div`
 `
 
 class Dashboard extends React.Component{
-
-    // state = {
-    //     horse: SingleHorse,
-    // }
 
     getRaceArray = () => {
 
