@@ -10,6 +10,7 @@ import FutureRace from './searchRace';
 import PastRaces from './pastRaces/pastRaces';
 import HorseData from './horses';
 import { Link } from 'react-router-dom';
+import SingleHorse from './singleHorse';
 
 const NavBarDiv = styled.div`
     background-color: red;
@@ -20,8 +21,9 @@ const NavBarDiv = styled.div`
     padding: 0 50px;
 `
 
-const LogOutP = styled.p`
-    margin: 0px;
+const NavItemP = styled.p`
+    margin-left: 25px;
+    cursor: pointer;
 `
 
 const ContainerDiv = styled.div`
@@ -44,10 +46,14 @@ const MainContentDiv = styled.div`
     width: 100%;
 `
 
+const NavItemDiv = styled.div`
+    display: flex;
+`
+
 class Dashboard extends React.Component{
 
-    // componentDidMount() {
-    //     this.props.displayRaceData(this.props.races)
+    // state = {
+    //     horse: SingleHorse,
     // }
 
     getRaceArray = () => {
@@ -56,30 +62,37 @@ class Dashboard extends React.Component{
 
     logout = () => {
         localStorage.clear();
+        window.location.reload()
     }
 
+    delete = () => {
+        this.props.deleteUser()
+    }
     render() {
         return(
             <div>
                 <NavBarDiv>
                     <h2>WPS</h2>
-                    <nav>
-                        <LogOutP onClick={this.logout}>Log Out</LogOutP>
-                    </nav>
+                    <NavItemDiv>
+                        <NavItemP onClick={this.logout}>Log Out</NavItemP>
+                        <NavItemP onClick={this.delete}>Delete Account</NavItemP>
+                        <NavItemP>Update Account</NavItemP>
+                    </NavItemDiv>
                 </NavBarDiv>
                 <ContainerDiv>
                     <SideBar>
                         <h3>Side Bar</h3>
-                        <Link to="/protected/futureraces"><p>Predictions</p></Link>
+                        <Link to="/protected/"><p>Predictions</p></Link>
                         <Link to="/protected/pastraces"><p>Past Races</p></Link>
                         <Link to="/protected/horses"><p>Horses</p></Link>
                         <p>Jockeys</p>
                         <p>Race Tracks</p>
                     </SideBar>
                     <MainContentDiv>
-                        <Route path="/protected/futureraces" component={FutureRace}/>
+                        <Route exact path="/protected/" component={FutureRace}/>
                         <Route path="/protected/pastraces" component={PastRaces}/>
-                        <Route path="/protected/horses" component={HorseData}/>
+                        <Route exact path="/protected/horses" component={HorseData}/>
+                        <Route path="/protected/horses/:id" component={SingleHorse}/>
                     </MainContentDiv>
                 </ContainerDiv>
             </div>

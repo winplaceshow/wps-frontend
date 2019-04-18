@@ -26,3 +26,8 @@ export {
     GET_HORSES_DATA_SUCCESS,
     horsesData
 } from './horses';
+
+export {
+    DELETE_SUCCESS,
+    deleteUser,
+} from './deleteUser'
