@@ -10,8 +10,9 @@ export const logIn = (credentials) => dispatch => {
         .post(`https://build-week-wps.herokuapp.com/auth/login`, credentials)
         .then(res => {
             localStorage.setItem('token', res.data.token);
+            localStorage.setItem('userId', res.data.id);
             dispatch({type: LOGIN_SUCCESS, payload: res.data.payload})
-            console.log(res)
+            console.log(res.data.id)
         })
         .catch(err => {
             console.log(err.response.data);
