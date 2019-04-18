@@ -8,17 +8,21 @@ import { Link } from 'react-router-dom';
 import { logIn } from '../../actions/index';
 
 const LoginContainer = styled.div`
-    background-color: red;
+    background-color: #4D7EA8;
     width: 30%;
     height: auto;
     margin: 8% auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5); 
 `
 
 const HeaderDiv = styled.div`
     height: 50px;
     display: flex;
+    overflow: hidden;
     /* justify-content: space-around; */
-    /* align-items: center; */
+    align-items: center;
 `
 
 const LoginForm = styled.form`
@@ -42,17 +46,33 @@ const LoginButton = styled.button`
     width: 50%;
     height: 30px;
     border-radius: 5px;
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 `
 
 const LoginDiv = styled.div`
-    width: 204px;
-    height: 50px;
-    background-color: pink;
+    /* width: 204px;
+    height: 50px; */
+    padding-top: 25px;
+    padding-left: 46px;
+    color: white;
+    font-weight: bold;
 `
 
-const SignupDiv = styled.div`
-    width: 204px;
+const SignupP = styled.p`
+    /* width: 204px;
     height: 50px;
+    padding-top: 25px; */
+    color: white;
+`
+
+const SignupSpan = styled.span`
+    font-weight: bold;
+    color: white;
 `
 
 class Login extends React.Component {
@@ -92,12 +112,7 @@ class Login extends React.Component {
         return(
             <LoginContainer>
                 <HeaderDiv>
-                <Link to="/login">
-                    <LoginDiv>LogIn</LoginDiv>
-                </Link>
-                <Link to="/signup">
-                    <SignupDiv>SignUp</SignupDiv>
-                </Link>
+                    <LoginDiv>Login! Hurry up!</LoginDiv>
                 </HeaderDiv>
                 <LoginForm>
                     <LoginInput
@@ -120,6 +135,11 @@ class Login extends React.Component {
                         ) : () } */}
                         Login
                     </LoginButton>
+                    <SignupP>Don't have an account? Just
+                        <Link to="/signup" style={{textDecoration: 'none'}}>
+                            <SignupSpan> Sign Up!</SignupSpan>
+                        </Link>
+                    </SignupP>
                 </LoginForm>
             </LoginContainer>
         )

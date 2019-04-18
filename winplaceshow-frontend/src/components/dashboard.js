@@ -34,13 +34,24 @@ const ContainerDiv = styled.div`
 `
 
 const SideBar = styled.div`
-    background-color: gray;
+    background-color: #01172F;
     width: 200px;
     min-height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 25px;
+    color: white;
+    text-decoration: none;
+`
+
+const SideBarP = styled.p`
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    &&:hover{
+        background-color: black
+    }
 `
 
 const MainContentDiv = styled.div`
@@ -83,17 +94,15 @@ class Dashboard extends React.Component{
                     <NavItemDiv>
                         <NavItemP onClick={this.logout}>Log Out</NavItemP>
                         <NavItemP onClick={this.delete}>Delete Account</NavItemP>
-                        <Link to="/protected/updateuser"><NavItemP>Update Account</NavItemP></Link>
+                        <Link to="/protected/updateuser" style={{textDecoration: 'none'}}><NavItemP>Update Account</NavItemP></Link>
                     </NavItemDiv>
                 </NavBarDiv>
                 <ContainerDiv>
                     <SideBar>
                         <h3>Side Bar</h3>
-                        <Link to="/protected/"><p>Predictions</p></Link>
-                        <Link to="/protected/pastraces"><p>Past Races</p></Link>
-                        <Link to="/protected/horses"><p>Horses</p></Link>
-                        <p>Jockeys</p>
-                        <p>Race Tracks</p>
+                        <Link to="/protected/" style={{textDecoration: 'none'}}><SideBarP>Predictions</SideBarP></Link>
+                        <Link to="/protected/pastraces" style={{textDecoration: 'none'}}><SideBarP>Past Races</SideBarP></Link>
+                        <Link to="/protected/horses" style={{textDecoration: 'none'}}><SideBarP>Horses</SideBarP></Link>
                     </SideBar>
                     <MainContentDiv>
                         <Route exact path="/protected/" component={FutureRace}/>
