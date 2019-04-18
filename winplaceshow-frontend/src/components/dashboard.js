@@ -1,11 +1,15 @@
 import styled, { css } from 'styled-components';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import React from 'react';
 import { connect } from 'react-redux';
 // import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
-import { displayRaceData } from '../actions/index';
-import SearchRace from './searchRace';
+import { futureRaceData } from '../actions/index';
+import FutureRace from './searchRace';
+import PastRaces from './pastRaces/pastRaces';
+import HorseData from './horses';
+import { Link } from 'react-router-dom';
 
 const NavBarDiv = styled.div`
     background-color: red;
@@ -40,15 +44,6 @@ const MainContentDiv = styled.div`
     width: 100%;
 `
 
-const RaceDive = styled.div`
-    display: flex;
-    width: 85%;
-    background-color: red;
-    margin: 30px auto;
-    align-items: center;
-    justify-content: space-around;
-`
-
 class Dashboard extends React.Component{
 
     // componentDidMount() {
@@ -59,35 +54,32 @@ class Dashboard extends React.Component{
 
     }
 
+    logout = () => {
+        localStorage.clear();
+    }
+
     render() {
         return(
             <div>
                 <NavBarDiv>
                     <h2>WPS</h2>
                     <nav>
-                        <LogOutP>Log Out</LogOutP>
+                        <LogOutP onClick={this.logout}>Log Out</LogOutP>
                     </nav>
                 </NavBarDiv>
                 <ContainerDiv>
                     <SideBar>
                         <h3>Side Bar</h3>
-                        <p>Predictions</p>
-                        <p>Past Races</p>
-                        <p>Horses</p>
+                        <Link to="/protected/futureraces"><p>Predictions</p></Link>
+                        <Link to="/protected/pastraces"><p>Past Races</p></Link>
+                        <Link to="/protected/horses"><p>Horses</p></Link>
                         <p>Jockeys</p>
                         <p>Race Tracks</p>
                     </SideBar>
                     <MainContentDiv>
-                        <SearchRace/>
-                        {this.props.futureRaceArray.map((race, index) => (
-                            <RaceDive key={index}>
-                                <p>{index+1}</p>
-                                <h2>{race.name}</h2>
-                                <h2>{race.year}</h2>
-                                <h2>{race.city}</h2>
-                                <h2>prediction</h2>
-                            </RaceDive>
-                        ))}
+                        <Route path="/protected/futureraces" component={FutureRace}/>
+                        <Route path="/protected/pastraces" component={PastRaces}/>
+                        <Route path="/protected/horses" component={HorseData}/>
                     </MainContentDiv>
                 </ContainerDiv>
             </div>
@@ -98,7 +90,7 @@ class Dashboard extends React.Component{
 function mapDispatchToProps(dispatch) {
     return {
       dispatch,
-      ...bindActionCreators({ displayRaceData }, dispatch)
+      ...bindActionCreators({ futureRaceData }, dispatch)
     }
 }
 
