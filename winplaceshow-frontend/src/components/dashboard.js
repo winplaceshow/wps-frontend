@@ -14,12 +14,13 @@ import SingleHorse from './singleHorse';
 import UpdateUser from './updateUser';
 
 const NavBarDiv = styled.div`
-    background-color: red;
+    background-color: #4D7EA8;
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
+    color: white;
 `
 
 const NavItemP = styled.p`
@@ -35,14 +36,14 @@ const ContainerDiv = styled.div`
 
 const SideBar = styled.div`
     background-color: #01172F;
-    width: 200px;
+    width: 150px;
     min-height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 25px;
     color: white;
     text-decoration: none;
+    font-weight: bold;
 `
 
 const SideBarP = styled.p`
@@ -93,13 +94,13 @@ class Dashboard extends React.Component{
                     <h2>WPS</h2>
                     <NavItemDiv>
                         <NavItemP onClick={this.logout}>Log Out</NavItemP>
-                        <NavItemP onClick={this.delete}>Delete Account</NavItemP>
-                        <Link to="/protected/updateuser" style={{textDecoration: 'none'}}><NavItemP>Update Account</NavItemP></Link>
+                        <NavItemP onClick={this.delete}>Delete</NavItemP>
+                        <Link to="/protected/updateuser" style={{textDecoration: 'none', color: 'white'}}><NavItemP>Update</NavItemP></Link>
                     </NavItemDiv>
                 </NavBarDiv>
                 <ContainerDiv>
                     <SideBar>
-                        <h3>Side Bar</h3>
+                        <h3>SIDE BAR</h3>
                         <Link to="/protected/" style={{textDecoration: 'none'}}><SideBarP>Predictions</SideBarP></Link>
                         <Link to="/protected/pastraces" style={{textDecoration: 'none'}}><SideBarP>Past Races</SideBarP></Link>
                         <Link to="/protected/horses" style={{textDecoration: 'none'}}><SideBarP>Horses</SideBarP></Link>

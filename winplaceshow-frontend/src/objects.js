@@ -80,26 +80,32 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
                 horseId: 0,
+                horseName: "Horse2",
                 winningOdds: 0.1
             },
             {
                 horseId: 0,
+                horseName: "Horse3",
                 winningOdds: 0.3
             },
             {
                 horseId: 0,
+                horseName: "Horse4",
                 winningOdds: 0.1
             },
             {
                 horseId: 0,
+                horseName: "Horse5",
                 winningOdds: 0.2
             },
             {
                 horseId: 0,
+                horseName: "Horse6",
                 winningOdds: 0.1
             },
         ]
@@ -112,6 +118,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
@@ -144,6 +151,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
@@ -176,6 +184,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
@@ -208,6 +217,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
@@ -240,6 +250,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
@@ -272,6 +283,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
@@ -304,6 +316,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
@@ -336,6 +349,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
@@ -368,6 +382,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
+                horseName: "Horse1",
                 winningOdds: 0.2
             },
             {
