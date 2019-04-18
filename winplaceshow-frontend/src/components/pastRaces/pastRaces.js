@@ -85,7 +85,7 @@ class PastRaces extends React.Component {
                 {filteredRaces.map((race, index) => (
                     <RaceDiv key={index}>
                         <div>
-                            <h4>So. No.</h4>
+                            <h4>Sr. No.</h4>
                             <h2>{index+1}</h2>
                         </div>
                         <div>

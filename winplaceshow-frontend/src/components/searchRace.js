@@ -97,7 +97,7 @@ class FutureRace extends React.Component {
                     {filteredRaces.map((race, index) => (
                         <RaceDiv key={index}>
                             <div>
-                                <h4>S. No.</h4>
+                                <h4>Sr. No.</h4>
                                 <h2>{index+1}</h2>
                             </div>
                             <div>
