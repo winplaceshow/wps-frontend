@@ -1,15 +1,17 @@
 import styled, { css } from 'styled-components';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import axios from 'axios';
 
 import React from 'react';
 import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 import { futureRaceData } from '../actions/index';
 import FutureRace from './searchRace';
 import PastRaces from './pastRaces/pastRaces';
 import HorseData from './horses';
 import { Link } from 'react-router-dom';
+import SingleHorse from './singleHorse';
+import UpdateUser from './updateUser';
 
 const NavBarDiv = styled.div`
     background-color: red;
@@ -20,8 +22,9 @@ const NavBarDiv = styled.div`
     padding: 0 50px;
 `
 
-const LogOutP = styled.p`
-    margin: 0px;
+const NavItemP = styled.p`
+    margin-left: 25px;
+    cursor: pointer;
 `
 
 const ContainerDiv = styled.div`
@@ -44,11 +47,11 @@ const MainContentDiv = styled.div`
     width: 100%;
 `
 
-class Dashboard extends React.Component{
+const NavItemDiv = styled.div`
+    display: flex;
+`
 
-    // componentDidMount() {
-    //     this.props.displayRaceData(this.props.races)
-    // }
+class Dashboard extends React.Component{
 
     getRaceArray = () => {
 
@@ -56,30 +59,48 @@ class Dashboard extends React.Component{
 
     logout = () => {
         localStorage.clear();
+        window.location.reload()
     }
 
+    delete = () => {
+        console.log(localStorage.getItem('userId'))
+        axios
+        .delete(`https://build-week-wps.herokuapp.com/users/${localStorage.getItem('userId')}`)
+        .then(res => {
+            console.log(res)
+            localStorage.clear()
+            window.location.reload()
+        })
+        .catch(err => {
+            console.log(err.response.data);
+        })    
+    }
     render() {
         return(
             <div>
                 <NavBarDiv>
                     <h2>WPS</h2>
-                    <nav>
-                        <LogOutP onClick={this.logout}>Log Out</LogOutP>
-                    </nav>
+                    <NavItemDiv>
+                        <NavItemP onClick={this.logout}>Log Out</NavItemP>
+                        <NavItemP onClick={this.delete}>Delete Account</NavItemP>
+                        <Link to="/protected/updateuser"><NavItemP>Update Account</NavItemP></Link>
+                    </NavItemDiv>
                 </NavBarDiv>
                 <ContainerDiv>
                     <SideBar>
                         <h3>Side Bar</h3>
-                        <Link to="/protected/futureraces"><p>Predictions</p></Link>
+                        <Link to="/protected/"><p>Predictions</p></Link>
                         <Link to="/protected/pastraces"><p>Past Races</p></Link>
                         <Link to="/protected/horses"><p>Horses</p></Link>
                         <p>Jockeys</p>
                         <p>Race Tracks</p>
                     </SideBar>
                     <MainContentDiv>
-                        <Route path="/protected/futureraces" component={FutureRace}/>
+                        <Route exact path="/protected/" component={FutureRace}/>
                         <Route path="/protected/pastraces" component={PastRaces}/>
-                        <Route path="/protected/horses" component={HorseData}/>
+                        <Route exact path="/protected/horses" component={HorseData}/>
+                        <Route path="/protected/horses/:id" component={SingleHorse}/>
+                        <Route path="/protected/updateuser" component={UpdateUser}/>
                     </MainContentDiv>
                 </ContainerDiv>
             </div>

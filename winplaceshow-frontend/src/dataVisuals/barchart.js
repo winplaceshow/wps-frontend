@@ -9,6 +9,8 @@ import {
     VictoryAxis, 
     VictoryTheme,
     VictoryStack,
+    VictoryLine,
+    VictoryVoronoiContainer,
   } from 'victory';
 
 const data2012 = [
@@ -39,7 +41,7 @@ const data2015 = [
     {quarter: 4, earnings: 12000}
 ];
   
-const BarChart = () => {
+export const BarChart = () => {
     return (
         <div>
             <VictoryChart domainPadding={20}>
@@ -79,4 +81,38 @@ const BarChart = () => {
     )
 }
 
-export default BarChart;
+
+export const LineChart = () => {
+    return (
+        <div>
+            <VictoryChart
+                theme={VictoryTheme.material}
+            >
+                <VictoryLine
+                    style={{
+                        data: { stroke: "#c43a31", strokeWidth: 5 },
+                        parent: { border: "1px solid #ccc"}
+                    }}
+                    data={[
+                        { x: 1, y: 1 },
+                        { x: 2, y: 2 },
+                        { x: 3, y: 1 },
+                        { x: 4, y: 3 },
+                        { x: 5, y: 2 },
+                        { x: 6, y: 6 },
+                        { x: 7, y: 4 },
+                        { x: 8, y: 1 }
+                    ]}
+                    animate={{
+                        duration: 2000,
+                        onLoad: { duration: 1000 }
+                    }}
+                    height={200}
+                    padding={{ top: 20, bottom: 60 }}
+                >
+
+                </VictoryLine>
+            </VictoryChart>
+        </div>
+    )
+}

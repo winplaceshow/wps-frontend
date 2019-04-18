@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { horsesData } from '../actions/index';
 
@@ -66,10 +67,12 @@ class HorseData extends React.Component {
                     </SearchForm>
                 </SearchContainerDiv>
                 {filteredHorses.map((race, index) => (
-                    <RaceDiv key={index}>
-                        <p>{index+1}</p>
-                        <h2>{race.name}</h2>
-                    </RaceDiv>
+                    <Link to={`/protected/horses/${race.id}`}>
+                        <RaceDiv key={index}>
+                            <p>{index+1}</p>
+                            <h2>{race.name}</h2>
+                        </RaceDiv>
+                    </Link>
                 ))}
             </div>
         )
