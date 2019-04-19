@@ -7,10 +7,20 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const LoginContainer = styled.div`
-    background-color: red;
+    background-color: #4D7EA8;
     width: 30%;
     height: auto;
-    margin: 8% auto;
+    margin: 8% auto 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5); 
+    color: white;
+    font-weight: bold;
+`
+
+const HeaderTextDiv = styled.div`
+    padding-left: 35px;
+    padding-top: 25px;
 `
 
 const HeaderDiv = styled.div`
@@ -41,6 +51,13 @@ const LoginButton = styled.button`
     width: 50%;
     height: 30px;
     border-radius: 5px;
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
 `
 
 const LoginDiv = styled.div`
@@ -93,7 +110,7 @@ class UpdateUser extends React.Component {
         return(
             <LoginContainer>
                 <HeaderDiv>
-                    <div>Update User Details</div>
+                    <HeaderTextDiv>Update User Details</HeaderTextDiv>
                 </HeaderDiv>
                 <LoginForm>
                     <LoginInput
@@ -118,7 +135,7 @@ class UpdateUser extends React.Component {
                         onChange={this.changeHandler}
                     />
                     <LoginButton onClick={this.updateUser}>
-                        Login
+                        Update
                     </LoginButton>
                 </LoginForm>
             </LoginContainer>

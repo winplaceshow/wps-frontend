@@ -8,10 +8,13 @@ import { Link } from 'react-router-dom';
 import { signup } from '../../actions/index';
 
 const SignupContainer = styled.div`
-    background-color: red;
+    background-color: #4D7EA8;
     width: 30%;
     height: auto;
     margin: 8% auto 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5); 
 `
 
 const HeaderDiv = styled.div`
@@ -42,17 +45,47 @@ const SignupButton = styled.button`
     width: 50%;
     height: 30px;
     border-radius: 5px;
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+
 `
 
 const LoginDiv = styled.div`
     width: 205px;
     height: 50px;
+    padding-top: 25px;
+    /* font-weight: bold; */
+    color: white;
 `
 
 const SignupDiv = styled.div`
-    width: 205px;
+    /* width: 205px;
+    height: 50px; */
+    padding-top: 25px;
+    padding-left: 46px;
+    color: white;
+    font-weight: bold;
+`
+
+const LoginP = styled.p`
+    /* width: 204px;
     height: 50px;
-    background-color: pink;
+    padding-top: 25px; */
+    color: white;
+`
+
+const SignupSpan = styled.span`
+    font-weight: bold;
+    color: white;
+`
+
+const SignupP = styled.p`
+    color: white;
 `
 
 class Signup extends React.Component {
@@ -95,12 +128,7 @@ class Signup extends React.Component {
         return(
             <SignupContainer>
                 <HeaderDiv>
-                    <Link to="/">
-                        <LoginDiv>LogIn</LoginDiv>
-                    </Link>
-                    <Link to="/signup">
-                        <SignupDiv>SignUp</SignupDiv>
-                    </Link>
+                    <SignupDiv>SignUp! don't think!!</SignupDiv>
                 </HeaderDiv>
                 <SignupForm>
                     <SignupInput
@@ -130,7 +158,20 @@ class Signup extends React.Component {
                         ) : () } */}
                         Signup
                     </SignupButton>
-                    <h2>{this.props.signupSuccessMessage}</h2>
+                    {/* <h2>{this.props.signupSuccessMessage}</h2> */}
+                    {localStorage.getItem('signup') 
+                        ? (<SignupP>SUCCESS? Just
+                            <Link to="/" style={{textDecoration: 'none'}}>
+                                <SignupSpan> Login!</SignupSpan>
+                            </Link>
+                        </SignupP>)
+                        : (<LoginP>Already have an account? Go to
+                            <Link to="/" style={{textDecoration: 'none'}}>
+                                <SignupSpan> Login!</SignupSpan>
+                            </Link>
+                        </LoginP>)}
+                        
+
                 </SignupForm>
             </SignupContainer>
         )

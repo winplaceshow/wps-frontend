@@ -14,17 +14,22 @@ import SingleHorse from './singleHorse';
 import UpdateUser from './updateUser';
 
 const NavBarDiv = styled.div`
-    background-color: red;
+    background-color: #4D7EA8;
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
+    color: white;
 `
 
 const NavItemP = styled.p`
-    margin-left: 25px;
+    padding: 15px;
     cursor: pointer;
+    &:hover{
+        background-color: white;
+        color: black;
+    }
 `
 
 const ContainerDiv = styled.div`
@@ -34,13 +39,32 @@ const ContainerDiv = styled.div`
 `
 
 const SideBar = styled.div`
-    background-color: gray;
-    width: 200px;
+    background-color: #01172F;
+    width: 150px;
     min-height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+`
+
+const SideBarDiv = styled.div`
+    text-decoration: none;
+    color: white;
+`
+
+const SideBarOuterDiv = styled.div`
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+    padding-top: 13px;
+    &&:hover{
+        background-color: #4D7EA8;
+    }
 `
 
 const MainContentDiv = styled.div`
@@ -49,6 +73,11 @@ const MainContentDiv = styled.div`
 
 const NavItemDiv = styled.div`
     display: flex;
+    font-weight: bold;
+`
+const SideBarH3 = styled.h3`
+    margin-top: 30px;
+    padding-left: 20px;
 `
 
 class Dashboard extends React.Component{
@@ -82,18 +111,28 @@ class Dashboard extends React.Component{
                     <h2>WPS</h2>
                     <NavItemDiv>
                         <NavItemP onClick={this.logout}>Log Out</NavItemP>
-                        <NavItemP onClick={this.delete}>Delete Account</NavItemP>
-                        <Link to="/protected/updateuser"><NavItemP>Update Account</NavItemP></Link>
+                        <NavItemP onClick={this.delete}>Delete</NavItemP>
+                        <Link to="/protected/updateuser" style={{textDecoration: 'none', color: 'white'}}><NavItemP>Update</NavItemP></Link>
                     </NavItemDiv>
                 </NavBarDiv>
                 <ContainerDiv>
                     <SideBar>
-                        <h3>Side Bar</h3>
-                        <Link to="/protected/"><p>Predictions</p></Link>
-                        <Link to="/protected/pastraces"><p>Past Races</p></Link>
-                        <Link to="/protected/horses"><p>Horses</p></Link>
-                        <p>Jockeys</p>
-                        <p>Race Tracks</p>
+                        <SideBarH3>SIDE BAR</SideBarH3>
+                        <SideBarOuterDiv>
+                            <Link to="/protected/" style={{textDecoration: 'none'}}>
+                                <SideBarDiv>Predictions</SideBarDiv>
+                            </Link>
+                        </SideBarOuterDiv>
+                        <SideBarOuterDiv>
+                            <Link to="/protected/pastraces" style={{textDecoration: 'none'}}>
+                                <SideBarDiv>Past Races</SideBarDiv>
+                            </Link>
+                        </SideBarOuterDiv>
+                        <SideBarOuterDiv>
+                            <Link to="/protected/horses" style={{textDecoration: 'none'}}>
+                                <SideBarDiv>Horses</SideBarDiv>
+                            </Link>
+                        </SideBarOuterDiv>
                     </SideBar>
                     <MainContentDiv>
                         <Route exact path="/protected/" component={FutureRace}/>

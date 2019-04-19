@@ -15,22 +15,38 @@ const SearchForm = styled.form`
 
 const RaceDiv = styled.div`
     display: flex;
-    width: 85%;
-    background-color: red;
+    width: 90%;
+    background-color: white;
+    color: #4D7EA8;
     margin: 30px auto;
     align-items: center;
     justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+    padding-bottom: 15px;
 `
 
 const SearchContainerDiv = styled.div`
     box-sizing: border-box;
     height: 50px;
-    width: 100%;
-    background-color: green;
+    width: 90%;
+    color: white;
+    border-radius: 5px;
+    background-color: #4D7EA8;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    margin: 30px auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+`
+
+const SearchInput = styled.input`
+    width: 300px;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    height: 20px;
 `
 
 class FutureRace extends React.Component {
@@ -60,10 +76,10 @@ class FutureRace extends React.Component {
                 <SearchContainerDiv>
                     <h3>Dashboard</h3>
                     <SearchForm>
-                        <input
+                        <SearchInput
                             type="text"
                             name="name"
-                            placeholder="name"
+                            // placeholder="name"
                             value={this.state.name}
                             onChange={this.changeHandler}
                         />
@@ -80,11 +96,26 @@ class FutureRace extends React.Component {
                 <div>
                     {filteredRaces.map((race, index) => (
                         <RaceDiv key={index}>
-                            <p>{index+1}</p>
-                            <h2>{race.name}</h2>
-                            <h2>{race.year}</h2>
-                            <h2>{race.city}</h2>
-                            <h2>prediction</h2>
+                            <div>
+                                <h4>Sr. No.</h4>
+                                <h2>{index+1}</h2>
+                            </div>
+                            <div>
+                                <h4>Name</h4>
+                                <h2>{race.name}</h2>
+                            </div>
+                            <div>
+                                <h4>Year</h4>
+                                <h2>{race.year}</h2>
+                            </div>
+                            <div>
+                                <h4>City</h4>
+                                <h2>{race.city}</h2>
+                            </div>
+                            <div>
+                                <h4>Prediction</h4>
+                                <h2>{race.prediction[0].horseName}</h2>
+                            </div>
                         </RaceDiv>
                     ))}
                 </div>
