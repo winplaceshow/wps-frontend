@@ -37,6 +37,21 @@ const RaceDiv = styled.div`
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
     padding-bottom: 15px;
+    @media (max-width: 800px) {
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .items {
+            width: 45%;
+            overflow: hidden;
+        }
+        h4 {
+            margin-bottom: 5px;
+        }
+        h2 {
+            margin-top: 5px;
+        }
+    }
 `
 
 const SearchInput = styled.input`
