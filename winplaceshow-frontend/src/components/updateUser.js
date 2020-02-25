@@ -88,21 +88,21 @@ class UpdateUser extends React.Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log(this.state.credentials[e.target.name])
+        // console.log(this.state.credentials[e.target.name])
     }
 
     updateUser = (e) => {
         e.preventDefault()
-        console.log(localStorage.getItem('userId'))
+        // console.log(localStorage.getItem('userId'))
         axios
         .put(`https://build-week-wps.herokuapp.com/users/${localStorage.getItem('userId')}`, this.state.credentials)
         .then(res => {
-            console.log(res)
+            // console.log(res)
             localStorage.clear()
             window.location.reload()
         })
         .catch(err => {
-            console.log(err.response);
+            // console.log(err.response);
         })  
     }
 
