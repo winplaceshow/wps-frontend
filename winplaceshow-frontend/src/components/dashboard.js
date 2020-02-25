@@ -111,7 +111,7 @@ class Dashboard extends React.Component{
                     <h2>WPS</h2>
                     <NavItemDiv>
                         <NavItemP onClick={this.logout}>Log Out</NavItemP>
-                        <NavItemP onClick={this.delete}>Delete</NavItemP>
+                        {/* <NavItemP onClick={this.delete}>Delete</NavItemP> */}
                         <Link to="/protected/updateuser" style={{textDecoration: 'none', color: 'white'}}><NavItemP>Update</NavItemP></Link>
                     </NavItemDiv>
                 </NavBarDiv>
