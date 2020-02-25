@@ -23,6 +23,6 @@ export const horsesData = (asd) => dispatch => {
     //     })
     //     .catch(err => console.log(err))
     dispatch({type: GET_HORSES_DATA_SUCCESS, payload: horses})
-    console.log(horses)
+    // console.log(horses)
 }
 

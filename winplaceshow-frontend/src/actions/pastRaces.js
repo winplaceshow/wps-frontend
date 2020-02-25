@@ -23,6 +23,6 @@ export const pastRaceData = (asd) => dispatch => {
     //     })
     //     .catch(err => console.log(err))
     dispatch({type: GET_PAST_RACE_DATA_SUCCESS, payload: pastRaceArray})
-    console.log(pastRaceArray)
+    // console.log(pastRaceArray)
 }
 

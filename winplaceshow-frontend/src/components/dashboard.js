@@ -92,16 +92,16 @@ class Dashboard extends React.Component{
     }
 
     delete = () => {
-        console.log(localStorage.getItem('userId'))
+        // console.log(localStorage.getItem('userId'))
         axios
         .delete(`https://build-week-wps.herokuapp.com/users/${localStorage.getItem('userId')}`)
         .then(res => {
-            console.log(res)
+            // console.log(res)
             localStorage.clear()
             window.location.reload()
         })
         .catch(err => {
-            console.log(err.response.data);
+            // console.log(err.response.data);
         })    
     }
     render() {
@@ -111,7 +111,7 @@ class Dashboard extends React.Component{
                     <h2>WPS</h2>
                     <NavItemDiv>
                         <NavItemP onClick={this.logout}>Log Out</NavItemP>
-                        <NavItemP onClick={this.delete}>Delete</NavItemP>
+                        {/* <NavItemP onClick={this.delete}>Delete</NavItemP> */}
                         <Link to="/protected/updateuser" style={{textDecoration: 'none', color: 'white'}}><NavItemP>Update</NavItemP></Link>
                     </NavItemDiv>
                 </NavBarDiv>
