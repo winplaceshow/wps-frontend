@@ -22,7 +22,7 @@ const SearchContainerDiv = styled.div`
 
 const SearchForm = styled.form`
     /* display: flex; */
-    width: 450px;
+    width: 30%;
 `
 
 const RaceDiv = styled.div`
@@ -39,7 +39,7 @@ const RaceDiv = styled.div`
 `
 
 const SearchInput = styled.input`
-    width: 300px;
+    width: 100%;
     background-color: white;
     border: none;
     border-radius: 3px;
