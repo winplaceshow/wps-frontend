@@ -8,63 +8,63 @@ export const pastRaceArray = [
     },
     {
         id: 1,
-        year: 2010,
+        year: 2011,
         name: "triple crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
     {
         id: 2,
-        year: 2010,
+        year: 2012,
         name: "tictacto crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
     {
         id: 3,
-        year: 2010,
+        year: 2013,
         name: "triple crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
     {
         id: 4,
-        year: 2010,
+        year: 2014,
         name: "triple crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
     {
         id: 5,
-        year: 2010,
+        year: 2015,
         name: "triple crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
     {
         id: 6,
-        year: 2010,
+        year: 2016,
         name: "triple crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
     {
         id: 7,
-        year: 2010,
+        year: 2017,
         name: "triple crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
     {
         id: 8,
-        year: 2010,
+        year: 2018,
         name: "triple crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
     },
     {
         id: 9,
-        year: 2010,
+        year: 2019,
         name: "triple crown",
         city: "elmont",
         horsesId: [0, 2, 5, 9, 4, 3]
@@ -118,7 +118,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
-                horseName: "Horse1",
+                horseName: "Horse2",
                 winningOdds: 0.2
             },
             {
@@ -151,7 +151,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
-                horseName: "Horse1",
+                horseName: "Horse3",
                 winningOdds: 0.2
             },
             {
@@ -184,7 +184,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
-                horseName: "Horse1",
+                horseName: "Horse4",
                 winningOdds: 0.2
             },
             {
@@ -217,7 +217,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
-                horseName: "Horse1",
+                horseName: "Horse5",
                 winningOdds: 0.2
             },
             {
@@ -250,7 +250,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
-                horseName: "Horse1",
+                horseName: "Horse6",
                 winningOdds: 0.2
             },
             {
@@ -283,7 +283,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
-                horseName: "Horse1",
+                horseName: "Horse7",
                 winningOdds: 0.2
             },
             {
@@ -316,7 +316,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
-                horseName: "Horse1",
+                horseName: "Horse8",
                 winningOdds: 0.2
             },
             {
@@ -349,7 +349,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
-                horseName: "Horse1",
+                horseName: "Horse9",
                 winningOdds: 0.2
             },
             {
@@ -382,7 +382,7 @@ export const futureRaceArray = [
         prediction: [
             {
                 horseId: 0,
-                horseName: "Horse1",
+                horseName: "Horse10",
                 winningOdds: 0.2
             },
             {
@@ -413,7 +413,7 @@ export const horses = [
     {
         id: 0,
         picture: 'https://i.ytimg.com/vi/cDKp9VxFX14/maxresdefault.jpg',
-        name: "horse1",
+        name: "Horse1",
         totalRaces: 8,
         totalPrizeMoney: 150000,
         age: "3 Years",
@@ -452,10 +452,10 @@ export const horses = [
     {
         id: 1,
         picture: 'https://www.extremesportslab.com/wp-content/uploads/2018/12/racehorse-jockey.jpg',
-        name: "horse2",
+        name: "Horse2",
         totalRaces: 8,
         totalPrizeMoney: 150000,
-        age: "3 Years",
+        age: "3.5 Years",
         races: [
             {
                 raceId: 0,
@@ -491,10 +491,10 @@ export const horses = [
     {
         id: 2,
         picture: 'https://184cda7661b9609f94b0-f196c43f59505ef65734afae659eea38.ssl.cf2.rackcdn.com/Accelerate_Pacific_Classic_2018_615x400_5_orig.jpg',
-        name: "horse3",
+        name: "Horse3",
         totalRaces: 8,
         totalPrizeMoney: 150000,
-        age: "3 Years",
+        age: "2.5 Years",
         races: [
             {
                 raceId: 0,
@@ -530,10 +530,10 @@ export const horses = [
     {
         id: 3,
         picture: 'https://cdn.racenet.com.au/images/horses/winx.jpg',
-        name: "horse4",
+        name: "Horse4",
         totalRaces: 8,
         totalPrizeMoney: 150000,
-        age: "3 Years",
+        age: "4 Years",
         races: [
             {
                 raceId: 0,
@@ -569,7 +569,7 @@ export const horses = [
     {
         id: 4,
         picture: 'https://www.gallop-magazine.com/wp-content/uploads/2018/04/Gallop-Magazine01.-MAURICE.jpg',
-        name: "horse5",
+        name: "Horse5",
         totalRaces: 8,
         totalPrizeMoney: 150000,
         age: "3 Years",
@@ -608,10 +608,10 @@ export const horses = [
     {
         id: 5,
         picture: 'https://i.pinimg.com/originals/5a/60/80/5a60809365ce05d4f8a065eed29e4bc4.jpg',
-        name: "horse6",
+        name: "Horse6",
         totalRaces: 8,
         totalPrizeMoney: 150000,
-        age: "3 Years",
+        age: "4 Years",
         races: [
             {
                 raceId: 0,
@@ -647,7 +647,7 @@ export const horses = [
     {
         id: 6,
         picture: 'https://www.gannett-cdn.com/-mm-/a3d3880be80bf74d663c61cd98378d5a74817f76/c=0-37-3883-2231/local/-/media/2018/05/02/USATODAY/USATODAY/636608516072201463-USP-Horse-Racing--Kentucky-Derby-Workouts.jpg?width=3200&height=1680&fit=crop',
-        name: "horse7",
+        name: "Horse7",
         totalRaces: 8,
         totalPrizeMoney: 150000,
         age: "3 Years",
@@ -686,7 +686,7 @@ export const horses = [
     {
         id: 7,
         picture: 'https://i.ytimg.com/vi/cDKp9VxFX14/maxresdefault.jpg',
-        name: "horse8",
+        name: "Horse8",
         totalRaces: 8,
         totalPrizeMoney: 150000,
         age: "3 Years",
@@ -725,7 +725,7 @@ export const horses = [
     {
         id: 8,
         picture: 'https://i.pinimg.com/originals/5a/60/80/5a60809365ce05d4f8a065eed29e4bc4.jpg',
-        name: "horse9",
+        name: "Horse9",
         totalRaces: 8,
         totalPrizeMoney: 150000,
         age: "3 Years",
@@ -764,7 +764,7 @@ export const horses = [
     {
         id: 9,
         picture: 'https://cdn.racenet.com.au/images/horses/winx.jpg',
-        name: "horse10",
+        name: "Horse10",
         totalRaces: 8,
         totalPrizeMoney: 150000,
         age: "3 Years",
