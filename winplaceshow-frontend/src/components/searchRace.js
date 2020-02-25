@@ -15,16 +15,24 @@ const SearchForm = styled.form`
 
 const RaceDiv = styled.div`
     display: flex;
-    flex-wrap: wrap;
     width: 90%;
     background-color: white;
     color: #4D7EA8;
     margin: 30px auto;
-    /* align-items: center; */
+    align-items: center;
     justify-content: space-around;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
     padding-bottom: 15px;
+    @media (max-width: 800px) {
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .items {
+            width: 45%;
+            overflow: hidden;
+        }
+    }
 `
 
 const SearchContainerDiv = styled.div`
@@ -97,23 +105,23 @@ class FutureRace extends React.Component {
                 <div>
                     {filteredRaces.map((race, index) => (
                         <RaceDiv key={index}>
-                            <div>
+                            <div className="items">
                                 <h4>Sr. No.</h4>
                                 <h2>{index+1}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>Name</h4>
                                 <h2>{race.name}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>Year</h4>
                                 <h2>{race.year}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>City</h4>
                                 <h2>{race.city}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>Prediction</h4>
                                 <h2>{race.prediction[0].horseName}</h2>
                             </div>
