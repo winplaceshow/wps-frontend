@@ -23,7 +23,7 @@ const SearchContainerDiv = styled.div`
 
 const SearchForm = styled.form`
     /* display: flex; */
-    width: 450px;
+    width: 30%;
 `
 
 const RaceDiv = styled.div`
@@ -55,7 +55,7 @@ const RaceDiv = styled.div`
 `
 
 const SearchInput = styled.input`
-    width: 300px;
+    width: 100%;
     background-color: white;
     border: none;
     border-radius: 3px;
@@ -100,15 +100,15 @@ class HorseData extends React.Component {
                 {filteredHorses.map((race, index) => (
                     <Link to={`/protected/horses/${race.id}`} style={{textDecoration: 'none'}}>
                         <RaceDiv key={index}>
-                            <div>
+                            <div className="items">
                                 <h4>Sr. No.</h4>
                                 <h2>{index+1}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>Name</h4>
                                 <h2>{race.name}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>Age</h4>
                                 <h2>{race.age}</h2>
                             </div>
