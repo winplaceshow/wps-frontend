@@ -10,7 +10,7 @@ import { futureRaceData } from '../actions/index';
 
 const SearchForm = styled.form`
     /* display: flex; */
-    width: 450px;
+    width: 30%;
 `
 
 const RaceDiv = styled.div`
@@ -24,6 +24,21 @@ const RaceDiv = styled.div`
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
     padding-bottom: 15px;
+    @media (max-width: 800px) {
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .items {
+            width: 45%;
+            overflow: hidden;
+        }
+        h4 {
+            margin-bottom: 5px;
+        }
+        h2 {
+            margin-top: 5px;
+        }
+    }
 `
 
 const SearchContainerDiv = styled.div`
@@ -42,7 +57,7 @@ const SearchContainerDiv = styled.div`
 `
 
 const SearchInput = styled.input`
-    width: 300px;
+    width: 100%;
     background-color: white;
     border: none;
     border-radius: 3px;
@@ -96,23 +111,23 @@ class FutureRace extends React.Component {
                 <div>
                     {filteredRaces.map((race, index) => (
                         <RaceDiv key={index}>
-                            <div>
+                            <div className="items">
                                 <h4>Sr. No.</h4>
                                 <h2>{index+1}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>Name</h4>
                                 <h2>{race.name}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>Year</h4>
                                 <h2>{race.year}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>City</h4>
                                 <h2>{race.city}</h2>
                             </div>
-                            <div>
+                            <div className="items">
                                 <h4>Prediction</h4>
                                 <h2>{race.prediction[0].horseName}</h2>
                             </div>

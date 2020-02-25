@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const LoginContainer = styled.div`
     background-color: #4D7EA8;
-    width: 30%;
+    width: 400px;
     height: auto;
     margin: 8% auto 0 auto;
     border-radius: 5px;
@@ -16,6 +16,9 @@ const LoginContainer = styled.div`
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5); 
     color: white;
     font-weight: bold;
+    @media (max-width: 700px) {
+        width: 80%;
+    }
 `
 
 const HeaderTextDiv = styled.div`
@@ -88,21 +91,21 @@ class UpdateUser extends React.Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log(this.state.credentials[e.target.name])
+        // console.log(this.state.credentials[e.target.name])
     }
 
     updateUser = (e) => {
         e.preventDefault()
-        console.log(localStorage.getItem('userId'))
+        // console.log(localStorage.getItem('userId'))
         axios
         .put(`https://build-week-wps.herokuapp.com/users/${localStorage.getItem('userId')}`, this.state.credentials)
         .then(res => {
-            console.log(res)
+            // console.log(res)
             localStorage.clear()
             window.location.reload()
         })
         .catch(err => {
-            console.log(err.response);
+            // console.log(err.response);
         })  
     }
 
