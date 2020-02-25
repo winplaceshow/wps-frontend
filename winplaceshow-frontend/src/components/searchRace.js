@@ -10,16 +10,17 @@ import { futureRaceData } from '../actions/index';
 
 const SearchForm = styled.form`
     /* display: flex; */
-    width: 450px;
+    width: 30%;
 `
 
 const RaceDiv = styled.div`
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
     background-color: white;
     color: #4D7EA8;
     margin: 30px auto;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-around;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
@@ -42,7 +43,7 @@ const SearchContainerDiv = styled.div`
 `
 
 const SearchInput = styled.input`
-    width: 300px;
+    width: 100%;
     background-color: white;
     border: none;
     border-radius: 3px;
