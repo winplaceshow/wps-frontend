@@ -10,10 +10,10 @@ export const signup = (credentials) => dispatch => {
         .post(`https://build-week-wps.herokuapp.com/auth/signup`, credentials)
         .then(res => {
             dispatch({type: SIGNUP_SUCCESS})
-            console.log(res)
+            // console.log(res)
         })
         .catch(err => {
             dispatch({ type: SIGNUP_FAILURE})
-            console.log(err);
+            // console.log(err);
         })
 }

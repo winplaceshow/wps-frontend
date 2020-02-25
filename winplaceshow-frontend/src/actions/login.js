@@ -7,15 +7,15 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const logIn = (credentials) => dispatch => {
     dispatch({ type: LOGIN_START });
     return axios
-        .post(`http://build-week-wps.herokuapp.com/auth/login`, credentials)
+        .post(`https://build-week-wps.herokuapp.com/auth/login`, credentials)
         .then(res => {
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('userId', res.data.id);
             dispatch({type: LOGIN_SUCCESS, payload: res.data.payload})
-            console.log(res)
+            // console.log(res)
         })
         .catch(err => {
-            console.log(err.response);
+            // console.log(err.response);
             dispatch({ type: LOGIN_FAILURE, payload: err.response})
         })
 }
