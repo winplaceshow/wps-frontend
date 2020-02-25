@@ -32,6 +32,12 @@ const RaceDiv = styled.div`
             width: 45%;
             overflow: hidden;
         }
+        h4 {
+            margin-bottom: 5px;
+        }
+        h2 {
+            margin-top: 5px;
+        }
     }
 `
 
